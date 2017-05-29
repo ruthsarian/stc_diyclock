@@ -423,9 +423,9 @@ int main()
               break;
 
 	  case M_SEC_DISP:
-	      dotdisplay(0,display_colon);
+	      // dotdisplay(0,display_colon);
 	      dotdisplay(1,display_colon);
-	      filldisplay(2,(rtc_table[DS_ADDR_SECONDS]>>4)&(DS_MASK_SECONDS_TENS>>4),0);
+	      filldisplay(2,(rtc_table[DS_ADDR_SECONDS]>>4)&(DS_MASK_SECONDS_TENS>>4),display_colon);
 	      filldisplay(3,rtc_table[DS_ADDR_SECONDS]&DS_MASK_SECONDS_UNITS,0);
 	      break;
               
