@@ -290,6 +290,13 @@ int main()
               
           case K_TEMP_DISP:
 	      dmode=M_TEMP_DISP;
+
+	      // display time after displaying temp for ~5 seconds.
+	      if (count>50) {
+	          count=0;
+		  kmode=K_NORMAL;
+		  dmode=M_NORMAL;
+	      }
 	      if (getkeypress(S1)) { kmode=K_WAIT_S1; lmode=K_TEMP_CF_TOGGLE; smode=K_TEMP_OFFSET; }
 	      if (getkeypress(S2)) kmode = K_DATE_DISP;
 	      break;
@@ -375,6 +382,13 @@ int main()
               flash_23 = 0;
 
 	      dmode=M_NORMAL;
+
+	      // display temp after ~25 seconds of displaying time. 
+	      if (count>250) {
+	          count=0;
+		  dmode=M_TEMP_DISP;
+		  kmode=K_TEMP_DISP;
+              }
 
 	      if (S1_PRESSED) { kmode = K_WAIT_S1; lmode=K_SET_HOUR; smode=K_SEC_DISP;  }
           //if (S2_PRESSED) { kmode = K_WAIT_S2; lmode=K_DEBUG;    smode=K_TEMP_DISP; }
