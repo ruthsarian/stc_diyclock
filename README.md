@@ -17,7 +17,6 @@ Basic functionality is working:
 *Pull requests are welcome.*
 
 ## TODOs
-* temperature display in C/F selectable (either build or run-time)
 * alarm and chime functionality
 
 ## hardware
